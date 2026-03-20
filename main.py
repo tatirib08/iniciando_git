@@ -13,10 +13,19 @@ class Calculadora:
         pass
 
     @staticmethod
-    def Fatorial(numero: float) -> float:
-        pass
+    def fatorial(number: int):
+    """
+    Função que calcula o fatorial de um número inteiro positivo.
 
-
+    :param number: o número para o qual o fatorial será calculado
+    :return: o fatorial do número fornecido
+    """
+    if number == 0 or number == 1:
+        return 1
+    elif number < 0:
+        raise ValueError("O fatorial não é definido para números negativos. Insira um número inteiro positivo.")
+    else:
+        return number * fatorial(number - 1)
 
 def main():
     while True:
