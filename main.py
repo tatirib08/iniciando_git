@@ -10,7 +10,22 @@ class Calculadora:
 
     @staticmethod
     def Fibonacci(numero: float) -> float:
-        pass
+        # Garantir que seja inteiro não negativo
+        if numero < 0 or not numero.is_integer():
+            raise ValueError("Fibonacci só é definido para inteiros não negativos.")
+
+        numero = int(numero)
+
+        if numero == 0:
+            return 0
+        elif numero == 1:
+            return 1
+
+        a, b = 0, 1
+        for _ in range(2, numero + 1):
+            a, b = b, a + b
+
+        return b
 
     @staticmethod
     def Fatorial(numero: float) -> float:
